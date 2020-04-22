@@ -7,8 +7,6 @@ variables:
    value: '.\samples\'
  - name: blueprintName
    value: '101-boilerplate'
- - name: subscriptionId
-   value: $(SubscriptionID)
 
 trigger:
   branches:
@@ -38,6 +36,6 @@ steps:
     AssignmentName: 'pla-$(blueprintName)'
     BlueprintName: $(blueprintName)
     ParametersFile: '$(blueprintsPath)$(blueprintName)\assign.json'
-    SubscriptionID: $(subscriptionId)
+    SubscriptionID: $(SubscriptionID)
     Wait: true
     Timeout: 500
